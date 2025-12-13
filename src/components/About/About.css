@@ -1,0 +1,75 @@
+.about {
+  background-color: #fff;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.highlight-card {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.highlight-icon {
+  width: 50px;
+  height: 50px;
+  background: #3498db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.highlight-card h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.highlight-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .highlight-card {
+    padding: 20px;
+  }
+}

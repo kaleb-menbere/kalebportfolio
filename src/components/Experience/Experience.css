@@ -1,0 +1,137 @@
+.experience {
+  background-color: #f8f9fa;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 40px;
+  width: 20px;
+  height: 20px;
+  background: #3498db;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.experience-card::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 40px;
+  width: 2px;
+  height: calc(100% + 30px);
+  background: #3498db;
+}
+
+.experience-card:last-child::after {
+  height: 40px;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.experience-icon {
+  width: 50px;
+  height: 50px;
+  background: #3498db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.experience-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  color: #3498db;
+  font-weight: 600;
+}
+
+.experience-details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.detail-item svg {
+  color: #3498db;
+}
+
+.experience-description {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 20px;
+  }
+  
+  .experience-card::before,
+  .experience-card::after {
+    display: none;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .experience-title {
+    font-size: 1.3rem;
+  }
+}

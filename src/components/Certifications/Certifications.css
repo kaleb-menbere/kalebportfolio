@@ -1,0 +1,101 @@
+.certifications {
+  background-color: #f8f9fa;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.certification-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid #3498db;
+}
+
+.certification-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.certification-icon {
+  width: 40px;
+  height: 40px;
+  background: #f0f7ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3498db;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.certification-title {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.certification-issuer {
+  font-size: 0.95rem;
+  color: #3498db;
+  font-weight: 600;
+}
+
+.certification-details {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.certification-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.certification-date svg {
+  color: #f39c12;
+}
+
+.certification-id {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+}
+
+.certification-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.certification-link:hover {
+  color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .certification-card {
+    padding: 20px;
+  }
+}
