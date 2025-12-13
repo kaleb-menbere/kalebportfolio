@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Certifications.css';
-import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaCertificate, FaExternalLinkAlt, FaCalendarAlt, FaIdCard } from 'react-icons/fa';
 import { SiMeta, SiGoogle, SiCoursera } from 'react-icons/si';
 
 const certifications = [
@@ -70,49 +70,111 @@ const certifications = [
 ];
 
 const Certifications = () => {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const timer = setTimeout(() => {
+              certifications.forEach((_, index) => {
+                setTimeout(() => {
+                  setVisibleCards((prev) => [...prev, index]);
+                }, index * 100);
+              });
+            }, 200);
+            
+            return () => clearTimeout(timer);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const getIconColor = (issuer) => {
+    switch (issuer) {
+      case 'Meta':
+        return { background: 'linear-gradient(135deg, #1877F2, #4267B2)', icon: <SiMeta /> };
+      case 'Google':
+        return { background: 'linear-gradient(135deg, #4285F4, #34A853)', icon: <SiGoogle /> };
+      default:
+        return { background: 'linear-gradient(135deg, #3498db, #2c3e50)', icon: <SiCoursera /> };
+    }
+  };
+
   return (
-    <section id="certifications" className="section certifications">
+    <section id="certifications" className="section certifications" ref={sectionRef}>
       <div className="container">
         <div className="section-title">
           <h2>Certifications</h2>
-          <p className="section-subtitle">Professional credentials and continuous learning</p>
+          <p className="section-subtitle">Professional credentials and continuous learning achievements</p>
         </div>
         
         <div className="certifications-grid">
-          {certifications.map((cert) => (
-            <div key={cert.id} className="certification-card">
-              <div className="certification-header">
-                <div className="certification-icon">
-                  {cert.icon}
-                </div>
-                <div className="certification-info">
-                  <h3 className="certification-title">{cert.title}</h3>
-                  <h4 className="certification-issuer">{cert.issuer}</h4>
-                </div>
-              </div>
-              
-              <div className="certification-details">
-                <div className="certification-date">
-                  <FaCertificate />
-                  <span>Issued: {cert.date}</span>
-                </div>
-                {cert.credentialId && (
-                  <div className="certification-id">
-                    <span>ID: {cert.credentialId}</span>
-                  </div>
-                )}
-              </div>
-              
-              <a 
-                href={cert.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="certification-link"
+          {certifications.map((cert, index) => {
+            const iconStyle = getIconColor(cert.issuer);
+            const isVisible = visibleCards.includes(index);
+            
+            return (
+              <div 
+                key={cert.id} 
+                className={`certification-card ${isVisible ? 'visible' : ''}`}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  borderLeftColor: cert.issuer === 'Meta' ? '#1877F2' : 
+                                 cert.issuer === 'Google' ? '#4285F4' : '#3498db'
+                }}
               >
-                <FaExternalLinkAlt /> View Credential
-              </a>
-            </div>
-          ))}
+                <div className="certification-header">
+                  <div 
+                    className="certification-icon"
+                    style={{ background: iconStyle.background }}
+                  >
+                    {cert.icon}
+                  </div>
+                  <div className="certification-info">
+                    <h3 className="certification-title">{cert.title}</h3>
+                    <span className="certification-issuer">{cert.issuer}</span>
+                  </div>
+                </div>
+                
+                <div className="certification-details">
+                  <div className="certification-date">
+                    <FaCalendarAlt />
+                    <span>Issued: {cert.date}</span>
+                  </div>
+                  {cert.credentialId && (
+                    <div className="certification-id">
+                      <FaIdCard style={{ marginRight: '8px' }} />
+                      <span>Credential ID: {cert.credentialId}</span>
+                    </div>
+                  )}
+                </div>
+                
+                <a 
+                  href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="certification-link"
+                >
+                  <FaExternalLinkAlt /> View Certificate
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
