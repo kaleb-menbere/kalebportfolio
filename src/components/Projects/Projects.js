@@ -662,7 +662,7 @@ const Projects = () => {
               <FaCode />
             </div>
             <div className="stats-content">
-              <h3>7+</h3>
+              <h3>10+</h3>
               <p>Completed Projects</p>
             </div>
           </div>
