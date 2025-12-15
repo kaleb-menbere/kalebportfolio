@@ -152,6 +152,7 @@
   width: 100%;
 }
 
+/* Hide menu icon on desktop, show on mobile */
 .menu-icon {
   display: none;
   font-size: 1.5rem;
@@ -161,7 +162,6 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
@@ -246,6 +246,7 @@
 }
 
 @media (max-width: 768px) {
+  /* Show menu icon on mobile */
   .menu-icon {
     display: flex;
   }
@@ -260,7 +261,6 @@
     backdrop-filter: blur(15px);
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
@@ -270,9 +270,11 @@
   }
 
   .nav-link {
-    font-size: 1.3rem;
-    margin: 15px 0;
+    font-size: 1rem;
+    margin: 10px 0;
     padding: 12px 30px;
+    width: 100%;
+    text-align: center;
   }
 
   .nav-link::after {
@@ -303,5 +305,47 @@
   
   .logo-icon {
     font-size: 1.6rem;
+  }
+}
+
+/* ====================================== */
+/* FIX: Add this to prevent content being covered */
+/* ====================================== */
+
+/* Add padding-top to your main content container */
+main, #root > div:not(.header) {
+  padding-top: 80px; /* Adjust based on your header height */
+}
+
+/* OR add this to your first section after header */
+#hero, .hero-section, .section:first-of-type {
+  padding-top: 80px;
+}
+
+/* Alternative: Add this to your App.css or global styles */
+body {
+  padding-top: 70px; /* Fixed header height */
+}
+
+/* Make sure all section IDs have proper spacing */
+#hero, #about, #experience, #projects, 
+#skills, #education, #certifications, #contact {
+  scroll-margin-top: 80px; /* This ensures smooth scrolling stops below header */
+  padding-top: 20px; /* Add some padding at the top of each section */
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* Smaller header on mobile */
+  }
+  
+  main, #root > div:not(.header) {
+    padding-top: 30px;
+  }
+  
+  #hero, #about, #experience, #projects, 
+  #skills, #education, #certifications, #contact {
+    scroll-margin-top: 60px;
   }
 }
