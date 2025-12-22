@@ -99,36 +99,16 @@ const Hero = () => {
             >
               <FaCode /> Let's Collaborate
             </a>
-            <a 
-              href="/resume.pdf" 
-              className="btn btn-outline"
-              download
-            >
-              <FaFileDownload /> Resume
-            </a>
-          </div>
-          
-          <div className="hero-social">
-            <a 
-              href="https://github.com/kalebmenbere" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-              <span className="social-tooltip">GitHub</span>
-            </a>
-            <a 
-              href="https://linkedin.com/in/kalebmenbere" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
-              <span className="social-tooltip">LinkedIn</span>
-            </a>
+            
+<a 
+  href="/resume/Kaleb_Menbere_CV+Edu.pdf" // Updated with folder
+  className="btn btn-outline"
+  download="Kaleb_Menbere_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaFileDownload /> Download Resume
+</a>
           </div>
         </div>
         

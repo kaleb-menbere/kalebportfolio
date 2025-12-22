@@ -22,6 +22,17 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    // Close menu when clicking outside
+    if (!isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.style.overflow = 'auto';
   };
 
   const navItems = [
@@ -30,6 +41,7 @@ const Header = () => {
     { name: 'Experience', to: 'experience' },
     { name: 'Projects', to: 'projects' },
     { name: 'Skills', to: 'skills' },
+    { name: 'Education', to: 'education' },
     { name: 'Certifications', to: 'certifications' },
     { name: 'Contact', to: 'contact' }
   ];
@@ -53,10 +65,10 @@ const Header = () => {
                 to={item.to}
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-80} // Increased offset to account for header
                 duration={500}
                 className="nav-link"
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
               >
                 <span className="nav-text">{item.name}</span>
                 <span className="nav-dot"></span>

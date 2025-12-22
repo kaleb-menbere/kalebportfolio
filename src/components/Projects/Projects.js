@@ -217,7 +217,7 @@ const Projects = () => {
         { name: "UI/UX", icon: <FaPalette />, color: "#FF6B6B" },
         { name: "Responsive", icon: <FaMobileAlt />, color: "#7952B3" }
       ],
-      github: "https://github.com/your-username/sun-optical",
+      github: "https://github.com/kaleb-menbere/sun",
       liveDemo: "https://sun-frontend-cyan.vercel.app",
       features: [
         "Product showcase with categories",
@@ -248,7 +248,7 @@ const Projects = () => {
         { name: "JavaScript", icon: <FaCode />, color: "#F7DF1E" },
         { name: "Responsive", icon: <FaMobileAlt />, color: "#7952B3" }
       ],
-      github: "https://github.com/your-username/leo-blue",
+      github: "https://github.com/kaleb-menbere/leo",
       liveDemo: "https://leo-blue-pi.vercel.app",
       features: [
         "Service pricing and package options",
@@ -279,7 +279,7 @@ const Projects = () => {
         { name: "UI Design", icon: <FaPalette />, color: "#FF6B6B" },
         { name: "Performance", icon: <FaBolt />, color: "#F7DF1E" }
       ],
-      github: "https://github.com/your-username/vision-tech",
+      github: "https://github.com/kaleb-menbere/vision-tech",
       liveDemo: "https://visiontech-three.vercel.app",
       features: [
         "Service showcase",
@@ -310,7 +310,6 @@ const Projects = () => {
         { name: "SMS Integration", icon: <FaSms />, color: "#FFA500" },
         { name: "Mobile-First", icon: <FaMobileAlt />, color: "#7952B3" }
       ],
-      github: "https://github.com/your-username/w-import",
       liveDemo: "https://w-import-and-technology.vercel.app",
       features: [
         "Phone number verification via SMS",
@@ -661,7 +660,7 @@ const Projects = () => {
               <FaCode />
             </div>
             <div className="stats-content">
-              <h3>7+</h3>
+              <h3>10+</h3>
               <p>Completed Projects</p>
             </div>
           </div>
