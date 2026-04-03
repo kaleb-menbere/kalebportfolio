@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import {  FaFileDownload, FaCode, FaServer, FaDatabase } from 'react-icons/fa';
+import { FaFileDownload, FaCode, FaServer, FaDatabase } from 'react-icons/fa';
 import { SiPython, SiDjango, SiReact } from 'react-icons/si';
 import { ReactTyped } from 'react-typed';
 
@@ -125,15 +125,15 @@ const Hero = () => {
                 <span className="code-title">portfolio.js</span>
               </div>
               <div className="code-content">
-                <pre>{`class Developer {
+                <pre className="code-pre">{`class Developer {
   constructor() {
     this.name = "Kaleb Menbere";
     this.title = "Full-Stack Developer";
     this.skills = {
-      frontend: [`}<span className="skill-tag">"React"</span><span className="skill-separator">, </span><span className="skill-tag">"JavaScript"</span><span className="skill-separator">, </span><span className="skill-tag">"HTML5/CSS3"</span>{`],
-      backend: [`}<span className="skill-tag">"Django"</span><span className="skill-separator">, </span><span className="skill-tag">"Python"</span><span className="skill-separator">, </span><span className="skill-tag">"REST APIs"</span>{`],
-      database: [`}<span className="skill-tag">"PostgreSQL"</span><span className="skill-separator">, </span><span className="skill-tag">"MySQL"</span><span className="skill-separator">, </span><span className="skill-tag">"MongoDB"</span>{`],
-      tools: [`}<span className="skill-tag">"Git"</span><span className="skill-separator">, </span><span className="skill-tag">"Docker"</span><span className="skill-separator">, </span><span className="skill-tag">"AWS"</span>{`]
+      frontend: ["React", "JavaScript", "HTML5/CSS3"],
+      backend: ["Django", "Python", "REST APIs"],
+      database: ["PostgreSQL", "MySQL", "MongoDB"],
+      tools: ["Git", "Docker", "AWS"]
     };
     this.experience = "4+ years";
     this.education = "BSc Computer Science";

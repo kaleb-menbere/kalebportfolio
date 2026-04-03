@@ -143,7 +143,7 @@
 .tech-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
 }
 
 .tech-icon {
@@ -325,17 +325,20 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  height: 400px;
+  height: 450px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .code-header {
   background: #2d2d2d;
-  padding: 15px 20px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #404040;
+  flex-shrink: 0;
 }
 
 .code-dots {
@@ -356,20 +359,29 @@
 .code-title {
   color: #ccc;
   font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .code-content {
-  padding: 20px;
-  color: #d4d4d4;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  height: calc(100% - 50px);
+  flex: 1;
   overflow-y: auto;
-  margin: 0;
+  background: #1e1e1e;
 }
 
+.code-pre {
+  margin: 0;
+  padding: 20px;
+  color: #d4d4d4;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
 .code-content::-webkit-scrollbar {
   width: 8px;
 }
@@ -381,6 +393,19 @@
 .code-content::-webkit-scrollbar-thumb {
   background: #555;
   border-radius: 4px;
+}
+
+/* Syntax highlighting for the code */
+.code-pre .keyword {
+  color: #569cd6;
+}
+
+.code-pre .string {
+  color: #ce9178;
+}
+
+.code-pre .comment {
+  color: #6a9955;
 }
 
 .floating-shapes {
@@ -474,6 +499,7 @@
   }
 }
 
+/* Responsive Design */
 @media (max-width: 1200px) {
   .hero .container {
     gap: 40px;
@@ -492,7 +518,7 @@
   }
   
   .hero-visual {
-    height: 400px;
+    height: 450px;
     order: -1;
   }
   
@@ -537,7 +563,12 @@
   }
   
   .code-window {
-    height: 350px;
+    height: 400px;
+  }
+  
+  .code-pre {
+    font-size: 0.75rem;
+    padding: 15px;
   }
 }
 
@@ -547,7 +578,7 @@
   }
   
   .hero-typed {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     min-height: 45px;
   }
   
@@ -569,89 +600,25 @@
   }
   
   .code-window {
-    height: 300px;
+    height: 380px;
   }
-}
-
-/* Add these styles to your existing Hero.css file */
-
-/* Fixed Skills Display in Code Window */
-.code-content {
-  padding: 20px;
-  color: #d4d4d4;
-  font-family: 'Courier New', 'Fira Code', monospace;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  height: calc(100% - 50px);
-  overflow-y: auto;
-  margin: 0;
-  background: #1e1e1e;
-}
-
-.code-content pre {
-  margin: 0;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-family: inherit;
-}
-
-/* Skill tags styling - ensures proper spacing and no overlap */
-.skill-tag {
-  color: #ce9178;
-  background: rgba(206, 145, 120, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  display: inline-block;
-  margin: 0 2px;
-  white-space: nowrap;
-}
-
-.skill-separator {
-  color: #d4d4d4;
-  margin: 0 2px;
-}
-
-/* Responsive adjustments for skills section */
-@media (max-width: 768px) {
-  .code-content {
+  
+  .code-pre {
     font-size: 0.7rem;
-    padding: 15px;
-  }
-  
-  .skill-tag {
-    white-space: normal;
-    word-break: keep-all;
-    display: inline-block;
-    margin: 2px;
-  }
-  
-  .code-content pre {
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-}
-
-@media (max-width: 576px) {
-  .code-content {
-    font-size: 0.65rem;
     padding: 12px;
-  }
-  
-  .skill-tag {
-    font-size: 0.6rem;
-    padding: 1px 4px;
+    line-height: 1.5;
   }
 }
 
-/* Ensure skills don't overlap on very small screens */
+/* Extra small devices */
 @media (max-width: 480px) {
-  .code-content {
+  .code-pre {
+    font-size: 0.65rem;
+    padding: 10px;
     line-height: 1.4;
   }
   
-  .skill-tag {
-    display: inline-block;
-    margin: 2px 1px;
-    white-space: normal;
+  .hero-visual {
+    height: 400px;
   }
 }
