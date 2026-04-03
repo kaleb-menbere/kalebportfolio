@@ -572,3 +572,86 @@
     height: 300px;
   }
 }
+
+/* Add these styles to your existing Hero.css file */
+
+/* Fixed Skills Display in Code Window */
+.code-content {
+  padding: 20px;
+  color: #d4d4d4;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  margin: 0;
+  background: #1e1e1e;
+}
+
+.code-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+}
+
+/* Skill tags styling - ensures proper spacing and no overlap */
+.skill-tag {
+  color: #ce9178;
+  background: rgba(206, 145, 120, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+.skill-separator {
+  color: #d4d4d4;
+  margin: 0 2px;
+}
+
+/* Responsive adjustments for skills section */
+@media (max-width: 768px) {
+  .code-content {
+    font-size: 0.7rem;
+    padding: 15px;
+  }
+  
+  .skill-tag {
+    white-space: normal;
+    word-break: keep-all;
+    display: inline-block;
+    margin: 2px;
+  }
+  
+  .code-content pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 576px) {
+  .code-content {
+    font-size: 0.65rem;
+    padding: 12px;
+  }
+  
+  .skill-tag {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+}
+
+/* Ensure skills don't overlap on very small screens */
+@media (max-width: 480px) {
+  .code-content {
+    line-height: 1.4;
+  }
+  
+  .skill-tag {
+    display: inline-block;
+    margin: 2px 1px;
+    white-space: normal;
+  }
+}

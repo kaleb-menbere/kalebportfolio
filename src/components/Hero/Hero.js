@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import { FaGithub, FaLinkedin, FaFileDownload, FaCode, FaServer, FaDatabase } from 'react-icons/fa';
 import { SiPython, SiDjango, SiReact } from 'react-icons/si';
-import { ReactTyped } from 'react-typed'; // Changed import
+import { ReactTyped } from 'react-typed';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,7 +45,7 @@ const Hero = () => {
           </h1>
           
           <div className="hero-typed">
-            <ReactTyped // Changed component name
+            <ReactTyped
               strings={[
                 'Building Scalable Web Applications',
                 'Creating Robust Backend Systems',
@@ -93,22 +93,18 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               <FaCode /> View Projects
             </a>
-            <a 
-              href="#contact" 
-              className="btn btn-secondary"
-            >
+            <a href="#contact" className="btn btn-secondary">
               <FaCode /> Let's Collaborate
             </a>
-            
-<a 
-  href="/resume/Kaleb_Menbere_CV+Edu.pdf" // Updated with folder
-  className="btn btn-outline"
-  download="Kaleb_Menbere_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <FaFileDownload /> Download Resume
-</a>
+            <a 
+              href="/resume/Kaleb_Menbere_CV+Edu.pdf"
+              className="btn btn-outline"
+              download="Kaleb_Menbere_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFileDownload /> Download Resume
+            </a>
           </div>
         </div>
         
@@ -128,23 +124,23 @@ const Hero = () => {
                 </div>
                 <span className="code-title">portfolio.js</span>
               </div>
-              <pre className="code-content">
-{`class Developer {
+              <div className="code-content">
+                <pre>{`class Developer {
   constructor() {
     this.name = "Kaleb Menbere";
     this.title = "Full-Stack Developer";
     this.skills = {
-      frontend: ["React", "JavaScript", "HTML5/CSS3"],
-      backend: ["Django", "Python", "REST APIs"],
-      database: ["PostgreSQL", "MySQL", "MongoDB"],
-      tools: ["Git", "Docker", "AWS"]
+      frontend: [`}<span className="skill-tag">"React"</span><span className="skill-separator">, </span><span className="skill-tag">"JavaScript"</span><span className="skill-separator">, </span><span className="skill-tag">"HTML5/CSS3"</span>{`],
+      backend: [`}<span className="skill-tag">"Django"</span><span className="skill-separator">, </span><span className="skill-tag">"Python"</span><span className="skill-separator">, </span><span className="skill-tag">"REST APIs"</span>{`],
+      database: [`}<span className="skill-tag">"PostgreSQL"</span><span className="skill-separator">, </span><span className="skill-tag">"MySQL"</span><span className="skill-separator">, </span><span className="skill-tag">"MongoDB"</span>{`],
+      tools: [`}<span className="skill-tag">"Git"</span><span className="skill-separator">, </span><span className="skill-tag">"Docker"</span><span className="skill-separator">, </span><span className="skill-tag">"AWS"</span>{`]
     };
     this.experience = "4+ years";
     this.education = "BSc Computer Science";
   }
 
   buildProject(requirements) {
-    const { frontend, backend, database } = this.skills;
+    const { frontend, backend } = this.skills;
     return \`Building with \${frontend[0]} & \${backend[0]}\`;
   }
 
@@ -154,8 +150,8 @@ const Hero = () => {
 }
 
 const kaleb = new Developer();
-console.log(kaleb.buildProject());`}
-              </pre>
+console.log(kaleb.buildProject());`}</pre>
+              </div>
             </div>
           </div>
           
@@ -164,13 +160,6 @@ console.log(kaleb.buildProject());`}
             <div className="shape shape-2"></div>
             <div className="shape shape-3"></div>
           </div>
-        </div>
-      </div>
-      
-      <div className="hero-scroll">
-        <div className="scroll-indicator">
-          <div className="scroll-line"></div>
-          <span>Scroll</span>
         </div>
       </div>
     </section>
