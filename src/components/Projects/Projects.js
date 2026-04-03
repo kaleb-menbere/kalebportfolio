@@ -119,7 +119,9 @@ const Projects = () => {
       technologies: [
         { name: "Django", icon: <SiDjango />, color: "#092E20" },
         { name: "Python", icon: <SiPython />, color: "#3776AB" },
-        { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
+        { name: "MySQL", icon: <FaDatabase />, color: "#4479A1" },
+        {name: "HTML5", icon: <FaLaptopCode />, color: "#E34F26" },
+        {name: "CSS3", icon: <FaLaptopCode />, color: "#1572B6" },
         { name: "Bootstrap", icon: <SiBootstrap />, color: "#7952B3" }
       ],
       github: "https://github.com/kalebmenbere/Agri-Connect",
@@ -334,13 +336,9 @@ const Projects = () => {
       period: "Development Period",
       technologies: [
         { name: "WordPress", icon: <FaWordpress />, color: "#21759B" },
-        { name: "PHP", icon: <FaPhp />, color: "#777BB4" },
         { name: "MySQL", icon: <FaDatabase />, color: "#4479A1" },
-        { name: "JavaScript", icon: <FaCode />, color: "#F7DF1E" },
-        { name: "CSS3", icon: <FaLaptopCode />, color: "#1572B6" },
         { name: "Responsive", icon: <FaMobileAlt />, color: "#7952B3" }
       ],
-      github: "https://github.com/your-username/star-tech",
       liveDemo: "http://startech.great-site.net/",
       secondaryLink: "http://star-tech.website/",
       features: [
