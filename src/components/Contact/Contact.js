@@ -10,7 +10,6 @@ import {
   FaPhone,
   FaMapMarkerAlt 
 } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
 
 const Contact = () => {
   const [activeTab, setActiveTab] = useState('professional');

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Education.css';
-import { FaGraduationCap, FaCalendarAlt, FaStar, FaTrophy, FaUsers, FaLightbulb, FaHeart, FaProjectDiagram } from 'react-icons/fa';
+import { FaGraduationCap, FaCalendarAlt, FaTrophy, FaUsers, FaLightbulb, FaHeart, FaProjectDiagram } from 'react-icons/fa';
 
 const Education = () => {
   const cardRef = useRef(null);

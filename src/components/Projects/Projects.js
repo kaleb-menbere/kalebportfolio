@@ -11,7 +11,6 @@ import {
   FaLeaf,
   FaMobileAlt,
   FaRocket,
-  FaStar,
   FaEye,
   FaArrowRight,
   FaGlasses,
@@ -23,7 +22,6 @@ import {
   FaDesktop,
   FaTimes,
   FaWordpress,
-  FaPhp,
   FaBriefcase,
   FaJava
 } from 'react-icons/fa';
@@ -31,8 +29,7 @@ import {
   SiDjango, 
   SiPython, 
   SiReact, 
-  SiBootstrap, 
-  SiPostgresql, 
+  SiBootstrap,  
   SiOracle 
 } from 'react-icons/si';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import { FaBars, FaTimes, FaCode, FaLaptopCode } from 'react-icons/fa';
+import { FaBars, FaTimes, FaLaptopCode } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Header = () => {

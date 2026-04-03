@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import './Experience.css';
 import { 
-  FaBriefcase, 
   FaCalendarAlt, 
   FaMapMarkerAlt, 
   FaCode,
   FaRocket,
   FaUsers,
-  FaArrowRight,
   FaStar,
   FaCogs,
   FaChartLine,
   FaUsersCog,
   FaLaptopCode,
-  FaDatabase,
-  FaServer
+  FaDatabase
 } from 'react-icons/fa';
 import { SiDjango, SiReact, SiPython, SiJavascript, SiBootstrap, SiPostgresql } from 'react-icons/si';
 

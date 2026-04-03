@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import { FaGithub, FaLinkedin, FaFileDownload, FaCode, FaServer, FaDatabase } from 'react-icons/fa';
+import {  FaFileDownload, FaCode, FaServer, FaDatabase } from 'react-icons/fa';
 import { SiPython, SiDjango, SiReact } from 'react-icons/si';
 import { ReactTyped } from 'react-typed';
 
